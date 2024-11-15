@@ -2,14 +2,22 @@
 
   {{#unless this.isAuthenticated}}
 
-    Para poder ver esta información, necesitas registrarte.
+
+<div class="ccf__dsply"><div style="font-size:18px;
+color:red"><b>Price:</b> {{i18n "topic_custom_field_price.label" field=this.fieldPrice}} {{{this.getPrice}}} </div><div style="font-size:18px;
+color:black"><b>URL/@Handle:</b> <span class="ccf-trigger-signup"><u>Sign up</u> and become a member to view the URL/@handle</span></div></div>
+
+
+
+
+   <!-- Para poder ver esta información, necesitas registrarte.
     <br />
 
     <DButton
       @action={{route-action "showCreateAccount"}}
       @label="sign_up"
       class="btn-primary sign-up-button"
-    />
+    /> -->
 
   {{/unless}}
 
