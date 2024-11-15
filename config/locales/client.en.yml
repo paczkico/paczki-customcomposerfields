@@ -1,0 +1,13 @@
+en:
+  js:
+    topic_custom_field:
+      label: "%{field}: %{value}"
+      placeholder: "Enter a %{field}"
+    topic_custom_field_price:
+      label: "%{field}:"
+      placeholder: "Price? USD or Best Offer"
+      invalid: "Invalid Price"
+    topic_custom_field_link:
+      label: "%{field}:"
+      placeholder: "URL/@handle - Only visible to Staff/VIP/Premium"
+      invalid: "Invalid URL/@handle"

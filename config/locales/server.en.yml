@@ -1,0 +1,7 @@
+en:
+  site_settings:
+    topic_custom_field_enabled: Enable your topic custom field.
+    topic_custom_field_price: Price of your topic custom field.
+    topic_custom_field_link: Link of your topic custom field.
+    topic_custom_field_categories: Selected categories to show custom fields.
+    topic_custom_field_groups: Choose only groups allowed.

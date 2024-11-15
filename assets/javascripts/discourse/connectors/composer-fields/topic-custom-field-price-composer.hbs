@@ -1,0 +1,14 @@
+<div {{did-insert this.checkComposerType}}>
+  {{#unless this.isHidden}}
+    <TopicCustomFieldPriceInput
+      @fieldName={{this.fieldName}}
+      @fieldValue={{this.fieldValue}}
+      @onChangeField={{this.onChangeField}}
+      class="topic-custom-field-input full"
+      required="required"
+      minlength="1"
+      maxlength="10"
+      step="any"
+    />
+  {{/unless}}
+</div>

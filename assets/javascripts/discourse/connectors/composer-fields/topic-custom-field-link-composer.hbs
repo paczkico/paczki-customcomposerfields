@@ -1,0 +1,9 @@
+<div {{did-insert this.checkComposerType}}> 
+  {{#unless this.isHidden}}
+    <TopicCustomFieldLinkInput
+      @fieldName={{this.fieldName}}
+      @fieldValue={{this.fieldValue}}
+      @onChangeField={{this.onChangeField}}
+    />
+  {{/unless}}
+</div>

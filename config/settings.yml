@@ -1,0 +1,28 @@
+plugins:
+  topic_custom_fields_enabled:
+    default: false
+    client: true
+    type: bool
+    label: "Enable Custom Fields for Topics"
+
+  topic_custom_field_price:
+    default: "Price"
+    client: true
+    type: string
+    label: "Custom field name for price"
+
+  topic_custom_field_link:
+    default: "Link"
+    client: true
+    type: string
+    label: "Custom field name for link"
+
+  topic_custom_field_categories:
+    default: ""
+    client: true
+    type: category_list
+  
+  topic_custom_field_groups:
+    default: ""
+    client: true
+    type: group_list

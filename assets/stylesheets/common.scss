@@ -1,0 +1,50 @@
+.topic-custom-field-input {
+  max-width: 100%;
+
+  &.small {
+    width: 150px;
+  }
+
+  &.large {
+    width: 475px;
+    width: 475px;
+  }
+
+  &.full {
+    width: 100%;
+  }
+}
+
+.custom-fields-container {
+  background-color: #2b393a;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  color: #f8f6fa;
+}
+
+.custom-fields-container .price {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 0.5em;
+}
+
+.custom-fields-container .urlOrHandle {
+  font-size: 15px;
+  font-weight: 800;
+
+  a {
+    color: #007bff;
+    font-weight: normal;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .error {
+    /*color: var(--danger-low);*/
+    color: #da474d;
+  }
+}

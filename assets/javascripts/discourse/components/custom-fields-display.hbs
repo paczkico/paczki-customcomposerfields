@@ -1,0 +1,55 @@
+{{#if this.isTopicEnabled}}
+
+  {{#unless this.isAuthenticated}}
+
+    Para poder ver esta información, necesitas registrarte.
+    <br />
+
+    <DButton
+      @action={{route-action "showCreateAccount"}}
+      @label="sign_up"
+      class="btn-primary sign-up-button"
+    />
+
+  {{/unless}}
+
+  {{#if this.isAuthenticated}}
+
+    {{#if this.isMemberValid}}
+
+      <div class="price">
+        {{i18n "topic_custom_field_price.label" field=this.fieldPrice}}
+        {{{this.getPrice}}}
+      </div>
+
+      <div class="urlOrHandle">
+        {{i18n "topic_custom_field_link.label" field="URL/@Handle"}}
+        {{{this.getUrlOrHandle}}}
+      </div>
+
+    {{/if}}
+
+    {{#unless this.isMemberValid}}
+
+      <div class="price">
+        {{i18n
+          "topic_custom_field_price.label"
+          field=this.fieldPrice
+          value=this.getPrice
+        }}
+      </div>
+
+      <div class="urlOrHandle">
+        {{i18n "topic_custom_field_link.label" field="URL/@Handle"}}
+        {{#if this.isMyOwnPost}}
+          {{{this.getUrlOrHandle}}}
+        {{else}}
+          <span class="error">Necesitas ser usuario VIP para ver el enlace</span>
+        {{/if}}
+      </div>
+
+    {{/unless}}
+
+  {{/if}}
+
+{{/if}}
