@@ -61,12 +61,13 @@ export default class TopicCustomFieldLinkInput extends Component {
       <Input
         @type="text"
         @value={{@fieldValue}}
+        @autocomplete="off"
         placeholder={{i18n
           "topic_custom_field_link.placeholder"
           field=this.fieldName
         }}
-        class="topic-custom-field-input full"
         {{on "change" (action @onChangeField value="target.value")}}
+        ...attributes
       />
     {{/if}}
   </template>

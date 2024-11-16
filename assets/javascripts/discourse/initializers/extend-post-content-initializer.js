@@ -33,6 +33,9 @@ export default {
         const postUserId = postModel.user_id;
         const price = topic[PRICE] || null;
         const urlOrHandle = topic[LINK] || null;
+        if (!price) {
+          return;
+        }
         const data = {
           categoryId,
           postUserId,

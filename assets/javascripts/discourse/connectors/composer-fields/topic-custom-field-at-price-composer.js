@@ -2,8 +2,8 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { alias } from "@ember/object/computed";
-// import { inject as service } from "@ember/service";
 import { service } from "@ember/service";
+import Composer from "discourse/models/composer";
 
 export default class TopicCustomFieldPriceComposer extends Component {
   @service siteSettings;
@@ -37,7 +37,7 @@ export default class TopicCustomFieldPriceComposer extends Component {
       this.isHidden = false;
       return false;
     }
-    if (this.composerModel.action === "createTopic") {
+    if (this.composerModel.action === Composer.CREATE_TOPIC) {
       this.isHidden = false;
       return false;
     }

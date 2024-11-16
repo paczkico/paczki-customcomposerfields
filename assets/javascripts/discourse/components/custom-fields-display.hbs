@@ -1,33 +1,44 @@
 {{#if this.isTopicEnabled}}
 
   {{#unless this.isAuthenticated}}
+  <div class="ccf__dsply">
+    <div style="font-size:18px;color:red">
+      <b>{{i18n "topic_custom_field_price.label" field=this.fieldPrice}}</b> {{{this.getPrice}}}
+    </div>
+    
+    <div style="font-size:18px; color:black">
+      <b>URL/@Handle:</b>
+      <span class="ccf-trigger-signup" {{on "click" this.showCreateAccount}}>
+        <u>Sign up</u> and become a member to view the URL/@handle
+      </span>
+    </div>
+  </div>
+  {{/unless}}
 
-<div class="ccf__dsply"><div style="font-size:18px;
-color:red"><b>{{i18n "topic_custom_field_price.label" field=this.fieldPrice}}</b> {{{this.getPrice}}} </div><div style="font-size:18px;
-color:black"><b>URL/@Handle:</b> <span class="ccf-trigger-signup" {{on "click" this.showCreateAccount}}><u>Sign up</u> and become a member to view the URL/@handle</span></div></div>
-
-   <!-- Para poder ver esta información, necesitas registrarte.
+  {{!-- {{#unless this.isAuthenticated}}
+   Para poder ver esta información, necesitas registrarte.
     <br />
 
     <DButton
       @action={{route-action "showCreateAccount"}}
       @label="sign_up"
       class="btn-primary sign-up-button"
-    /> -->
-
-  {{/unless}}
+    />
+  {{/unless}} --}}
 
   {{#if this.isAuthenticated}}
 
     {{#if this.isMemberValid}}
+      <div class="ccf__dsply">
+        <div style="font-size:18px;color:red">
+          <b>{{i18n "topic_custom_field_price.label" field=this.fieldPrice}}</b> {{{this.getPrice}}}
+        </div>
+        <div style="font-size:18px;color:black">
+          <b>{{i18n "topic_custom_field_link.label" field="URL/@Handle"}}</b> {{{this.getUrlOrHandle}}}
+        </div>
+      </div>
 
-<div class="ccf__dsply"><div style="font-size:18px;
-color:red"><b>{{i18n "topic_custom_field_price.label" field=this.fieldPrice}}</b> {{{this.getPrice}}} </div><div style="font-size:18px;
-color:black"><b>{{i18n "topic_custom_field_link.label" field="URL/@Handle"}}</b> {{{this.getUrlOrHandle}}}</div></div>
-
-
-
- <!--     <div class="price">
+      {{!-- <div class="price">
         {{i18n "topic_custom_field_price.label" field=this.fieldPrice}}
         {{{this.getPrice}}}
       </div>
@@ -35,30 +46,36 @@ color:black"><b>{{i18n "topic_custom_field_link.label" field="URL/@Handle"}}</b>
       <div class="urlOrHandle">
         {{i18n "topic_custom_field_link.label" field="URL/@Handle"}}
         {{{this.getUrlOrHandle}}}
-      </div> --> 
+      </div> --}}
 
     {{/if}}
 
     {{#unless this.isMemberValid}}
-
-<div class="ccf__dsply"><div style="font-size:18px;color:red"><b>Price:</b> 800</div><div style="font-size:18px;color:black"><b>URL/@Handle:</b> <span class="ccf-trigger-pm">Privacy enabled. Please <u>PM the user</u> to view the URL/@handle</span></div></div>
-
-
-<div class="ccf__dsply"><div style="font-size:18px;color:red"><b>{{i18n "topic_custom_field_price.label" field=this.fieldPrice}}</b> {{{this.getPrice}}} - {{i18n
-          "topic_custom_field_price.label"
-          field=this.fieldPrice
-          value=this.getPrice
-        }} </div>
- <div style="font-size:18px;color:black"><b>{{i18n "topic_custom_field_link.label" field="URL/@Handle"}}</b> -  {{i18n "topic_custom_field_link.label" field="URL/@Handle"}}
+    
+    <div class="ccf__dsply">
+      <div style="font-size:18px;color:red"><b>Price:</b> 800</div>
+      <div style="font-size:18px;color:black"><b>URL/@Handle:</b> <span class="ccf-trigger-pm">Privacy enabled. Please <u>PM the user</u> to view the URL/@handle</span></div>
+    </div>
+    
+    <div class="ccf__dsply">
+      <div style="font-size:18px;color:red">
+        <b>{{i18n "topic_custom_field_price.label" field=this.fieldPrice}}</b>
+        {{{this.getPrice}}} - {{i18n "topic_custom_field_price.label" field=this.fieldPrice value=this.getPrice }}
+      </div>
+    
+      <div style="font-size:18px;color:black">
+        <b>{{i18n "topic_custom_field_link.label" field="URL/@Handle"}}</b> -  {{i18n "topic_custom_field_link.label" field="URL/@Handle"}}
         {{#if this.isMyOwnPost}}
           {{{this.getUrlOrHandle}}}
-        {{else}}  <span class="ccf-trigger-pm">Privacy enabled. Please <u>PM the user</u> to view the URL/@handle</span> </div></div>
- {{/if}}
+        {{else}}
+          <span class="ccf-trigger-pm">Privacy enabled. Please <u>PM the user</u> to view the URL/@handle</span>
+        {{/if}}
       </div>
-
+    
+    </div>
     {{/unless}}
 
-      <div class="price">
+      {{!-- <div class="price">
         {{i18n
           "topic_custom_field_price.label"
           field=this.fieldPrice
@@ -75,11 +92,11 @@ color:black"><b>{{i18n "topic_custom_field_link.label" field="URL/@Handle"}}</b>
         {{/if}}
       </div>
 
-    {{/unless}}
+    {{/unless}} --}}
 
-<!--
 
-      <div class="price">
+
+      {{!-- <div class="price">
         {{i18n
           "topic_custom_field_price.label"
           field=this.fieldPrice
@@ -96,8 +113,8 @@ color:black"><b>{{i18n "topic_custom_field_link.label" field="URL/@Handle"}}</b>
         {{/if}}
       </div>
 
-    {{/unless}}
--->
+    {{/unless}} --}}
+
 
   {{/if}}
 

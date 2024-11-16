@@ -46,15 +46,15 @@ export default class TopicCustomFieldPriceInput extends Component {
   <template>
     {{#if this.shouldShowField}}
       <Input
-        @autocomplete="off"
-        @type="number"
+        @type="text"
         @value={{@fieldValue}}
+        @autocomplete="off"
         placeholder={{i18n
           "topic_custom_field_price.placeholder"
           field=this.fieldName
         }}
-        ...attributes
         {{on "change" (action @onChangeField value="target.value")}}
+        ...attributes
       />
     {{/if}}
   </template>
