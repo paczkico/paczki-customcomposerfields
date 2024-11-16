@@ -44,6 +44,41 @@ color:black"><b>{{i18n "topic_custom_field_link.label" field="URL/@Handle"}}</b>
 <div class="ccf__dsply"><div style="font-size:18px;color:red"><b>Price:</b> 800</div><div style="font-size:18px;color:black"><b>URL/@Handle:</b> <span class="ccf-trigger-pm">Privacy enabled. Please <u>PM the user</u> to view the URL/@handle</span></div></div>
 
 
+<div class="ccf__dsply"><div style="font-size:18px;color:red"><b>{{i18n "topic_custom_field_price.label" field=this.fieldPrice}}</b> {{{this.getPrice}}} - {{i18n
+          "topic_custom_field_price.label"
+          field=this.fieldPrice
+          value=this.getPrice
+        }} </div>
+ <div style="font-size:18px;color:black"><b>{{i18n "topic_custom_field_link.label" field="URL/@Handle"}}</b> -  {{i18n "topic_custom_field_link.label" field="URL/@Handle"}}
+        {{#if this.isMyOwnPost}}
+          {{{this.getUrlOrHandle}}}
+        {{else}}  <span class="ccf-trigger-pm">Privacy enabled. Please <u>PM the user</u> to view the URL/@handle</span> </div></div>
+ {{/if}}
+      </div>
+
+    {{/unless}}
+
+      <div class="price">
+        {{i18n
+          "topic_custom_field_price.label"
+          field=this.fieldPrice
+          value=this.getPrice
+        }}
+      </div>
+
+      <div class="urlOrHandle">
+        {{i18n "topic_custom_field_link.label" field="URL/@Handle"}}
+        {{#if this.isMyOwnPost}}
+          {{{this.getUrlOrHandle}}}
+        {{else}}
+         <span class="ccf-trigger-pm">Privacy enabled. Please <u>PM the user</u> to view the URL/@handle</span>
+        {{/if}}
+      </div>
+
+    {{/unless}}
+
+<!--
+
       <div class="price">
         {{i18n
           "topic_custom_field_price.label"
@@ -62,6 +97,7 @@ color:black"><b>{{i18n "topic_custom_field_link.label" field="URL/@Handle"}}</b>
       </div>
 
     {{/unless}}
+-->
 
   {{/if}}
 
