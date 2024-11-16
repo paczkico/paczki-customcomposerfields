@@ -43,24 +43,19 @@ export default class TopicCustomFieldPriceInput extends Component {
     return this.isTopicEnabled && this.isCategoryValid;
   }
 
-<template>
-  {{#if this.shouldShowField}}
-    <div style="width: 66.66%" class="ccf__field ember-view">
-      <input
-        id="ember134"
-        class="ember-text-field ember-view ccf__input"
-        type="number"
+  <template>
+    {{#if this.shouldShowField}}
+      <Input
+        @autocomplete="off"
+        @type="number"
+        @value={{@fieldValue}}
         placeholder={{i18n
           "topic_custom_field_price.placeholder"
           field=this.fieldName
         }}
-        autocomplete="off"
-        value={{@fieldValue}}
-        required=""
-        {{on "input" (fn @onChangeField (target.value))}}
         ...attributes
+        {{on "change" (action @onChangeField value="target.value")}}
       />
-    </div>
-  {{/if}}
-</template>
+    {{/if}}
+  </template>
 }
