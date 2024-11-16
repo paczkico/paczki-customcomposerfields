@@ -2,13 +2,10 @@
 
   {{#unless this.isAuthenticated}}
 
-
+<div class="ccf__dsply">
 <div class="ccf__dsply"><div style="font-size:18px;
-color:red"><b>Price:</b> {{i18n "topic_custom_field_price.label" field=this.fieldPrice}} {{{this.getPrice}}} </div><div style="font-size:18px;
-color:black"><b>URL/@Handle:</b> <span class="ccf-trigger-signup"><u>Sign up</u> and become a member to view the URL/@handle</span></div></div>
-
-
-
+color:red"><b>{{i18n "topic_custom_field_price.label" field=this.fieldPrice}}</b> {{{this.getPrice}}} </div><div style="font-size:18px;
+color:black"><b>URL/@Handle:</b> <span class="ccf-trigger-signup" {{on "click" this.showCreateAccount}}><u>Sign up</u> and become a member to view the URL/@handle</span></div></div>
 
    <!-- Para poder ver esta información, necesitas registrarte.
     <br />
