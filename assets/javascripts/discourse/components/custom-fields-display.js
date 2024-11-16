@@ -2,6 +2,8 @@ import Component from "@glimmer/component";
 import { computed } from "@ember/object";
 import { alias } from "@ember/object/computed";
 import { service } from "@ember/service";
+import { htmlSafe } from "@ember/template";
+
 
 const REGEX_URL =
   /^(https?:\/\/(?:www\.)?[\w-]+\.[a-z]{2,6}(?:\/[\w\-._~:/?#[\]@!$&'()*+,;=]*)?)$/i;
@@ -65,17 +67,19 @@ export default class CustomFieldsDisplay extends Component {
   }
 
   get getPrice() {
-    if (this.price) {
-      return "$" + this.price;
-    }
+    // if (typeof this.price === 'number') {
+    //   return `${this.price}$`;
+    // }
+    // return this.price;
+    return htmlSafe(this.price);
   }
 
   get getUrlOrHandle() {
+    let result =this.urlOrHandle;
     if (this.urlOrHandle && REGEX_URL.test(this.urlOrHandle)) {
-      return `<a href="${this.urlOrHandle}" target="_blank">${this.urlOrHandle}</a>`;
-    } else {
-      return this.urlOrHandle;
+      result = `<a href="${this.urlOrHandle}" target="_blank">${this.urlOrHandle}</a>`;
     }
+    return htmlSafe(result);
   }
 
   get isMyOwnPost() {
