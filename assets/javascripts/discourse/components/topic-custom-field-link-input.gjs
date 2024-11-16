@@ -56,22 +56,18 @@ export default class TopicCustomFieldLinkInput extends Component {
   //   return this.usernamePattern.test(this.inputValue);
   // }
 
-
-<template>
-  {{#if this.shouldShowField}}
-    <div style="width: 33.33%" class="ccf__field ember-view">
-      <input 
-        class="ember-text-field ember-view ccf__input full"
+  <template>
+    {{#if this.shouldShowField}}
+      <Input
+        @type="text"
+        @value={{@fieldValue}}
         placeholder={{i18n
           "topic_custom_field_link.placeholder"
           field=this.fieldName
         }}
-        type="text"
-        value={{@fieldValue}}
-        required=""
-        {{on "input" (fn @onChangeField (target.value))}}
+        class="topic-custom-field-input full"
+        {{on "change" (action @onChangeField value="target.value")}}
       />
-    </div>
-  {{/if}}
-</template>
+    {{/if}}
+  </template>
 }
