@@ -2,7 +2,6 @@
 
   {{#unless this.isAuthenticated}}
 
-<div class="ccf__dsply">
 <div class="ccf__dsply"><div style="font-size:18px;
 color:red"><b>{{i18n "topic_custom_field_price.label" field=this.fieldPrice}}</b> {{{this.getPrice}}} </div><div style="font-size:18px;
 color:black"><b>URL/@Handle:</b> <span class="ccf-trigger-signup" {{on "click" this.showCreateAccount}}><u>Sign up</u> and become a member to view the URL/@handle</span></div></div>
@@ -22,7 +21,13 @@ color:black"><b>URL/@Handle:</b> <span class="ccf-trigger-signup" {{on "click" t
 
     {{#if this.isMemberValid}}
 
-      <div class="price">
+<div class="ccf__dsply"><div style="font-size:18px;
+color:red"><b>{{i18n "topic_custom_field_price.label" field=this.fieldPrice}}</b> {{{this.getPrice}}} </div><div style="font-size:18px;
+color:black"><b>{{i18n "topic_custom_field_link.label" field="URL/@Handle"}}</b> {{{this.getUrlOrHandle}}}</div></div>
+
+
+
+ <!--     <div class="price">
         {{i18n "topic_custom_field_price.label" field=this.fieldPrice}}
         {{{this.getPrice}}}
       </div>
@@ -30,7 +35,7 @@ color:black"><b>URL/@Handle:</b> <span class="ccf-trigger-signup" {{on "click" t
       <div class="urlOrHandle">
         {{i18n "topic_custom_field_link.label" field="URL/@Handle"}}
         {{{this.getUrlOrHandle}}}
-      </div>
+      </div> --> 
 
     {{/if}}
 
