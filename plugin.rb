@@ -21,7 +21,7 @@ after_initialize do
   end
   
   fields = [
-    { name: TopicCustomFieldsPlugin::FIELD_PRICE.to_s, type: 'float' },
+    { name: TopicCustomFieldsPlugin::FIELD_PRICE.to_s, type: 'string' },
     { name: TopicCustomFieldsPlugin::FIELD_LINK.to_s, type: 'string' },
   ]
 
